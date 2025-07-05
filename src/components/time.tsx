@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 export const Time = () => {
   const [time, setTime] = useState(new Date());
@@ -18,9 +18,13 @@ export const Time = () => {
     hour: "2-digit",
   });
 
-  const minutes = time.toLocaleTimeString("en-US", {
-    minute: "2-digit",
-  });
+  const minutes = time
+    .toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    })
+    .split(":")[1];
 
   const minuteKey = time.getMinutes();
 
@@ -32,9 +36,9 @@ export const Time = () => {
           <motion.span
             key={minuteKey}
             className="absolute"
-            initial={{ y: 20, opacity: 0 }}
+            initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -20, opacity: 0 }}
+            exit={{ y: -10, opacity: 0 }}
             transition={{
               type: "spring",
               stiffness: 300,
