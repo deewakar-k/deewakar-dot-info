@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 import localFont from "next/font/local";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const diaType = localFont({
   src: [
@@ -18,11 +19,6 @@ const diaType = localFont({
     {
       path: "../../public/fonts/ABCDiatype-Medium-Trial.woff",
       weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../../public/fonts/ABCDiatype-Bold-Trial.woff",
-      weight: "700",
       style: "normal",
     },
   ],
@@ -50,9 +46,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${diaType.variable} ${ppModwest.variable} antialiased`}>
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
