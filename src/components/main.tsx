@@ -1,5 +1,3 @@
-import { ThemeToggle } from "./theme-toggle";
-
 export const Main = () => {
   return (
     <section className="flex-grow">
@@ -10,7 +8,6 @@ export const Main = () => {
             design engineer
           </h2>
         </div>
-        <ThemeToggle />
       </div>
       <p className="mb-4">{`greetings and salutations im deewakar, a design engineer centers on the artful fusion of design and technology.`}</p>
       <p>{` i love crafting thoughtful, beautiful yet functional and satisfying products.`}</p>

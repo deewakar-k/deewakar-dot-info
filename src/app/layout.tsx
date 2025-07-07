@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-
 import localFont from "next/font/local";
-import { ThemeProvider } from "@/components/theme-provider";
 
 const diaType = localFont({
   src: [
@@ -48,13 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${diaType.variable} ${ppModwest.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

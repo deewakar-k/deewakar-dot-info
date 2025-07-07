@@ -1,32 +1,38 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #2f2f2f;
-  --secondary-foreground: rgb(92, 92, 92);
-}
-
-.dark {
-  --background: #0a0a0a;
-  --foreground: #d0d0d0;
-  --secondary-foreground: rgb(163 163 163);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not(.light) {
-    --background: #0a0a0a;
-    --foreground: #d0d0d0;
-    --secondary-foreground: rgb(163 163 163);
-  }
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-secondary-foreground: var(--secondary-foreground);
+  --color-surface: var(--surface);
   --font-diatype: var(--font-diatype);
   --font-ppModwest: var(--font-ppModwest);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #2f2f2f;
+  --secondary-foreground: rgb(92, 92, 92);
+  --surface: #EBEBEB;
+}
+
+.dark {
+  --background: #111111;
+  --foreground: #d0d0d0;
+  --secondary-foreground: rgb(163 163 163);
+  --surface: #141414;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111111;
+    --foreground: #d0d0d0;
+    --secondary-foreground: rgb(163 163 163);
+    --surface: #141414
+  }
 }
 
 body {
