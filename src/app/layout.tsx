@@ -36,6 +36,20 @@ const ppModwest = localFont({
 
 export const metadata: Metadata = {
   title: "Deewakar Kumar",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://deewakar.info",
+    title: "Deewakar Kumar",
+    siteName: "Deewakar Kumar",
+    images: ["https://deewakar.info/og-mysite.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Deewakar Kumar",
+    creator: "@deewakar01",
+    images: ["https://deewakar.info/og-mysite.png"],
+  },
 };
 
 export default function RootLayout({
