@@ -4,7 +4,7 @@ import { Navbar } from "@/components/navbar";
 
 export default function Home() {
   return (
-    <div className="flex max-w-full flex-col py-52">
+    <div className="flex max-w-full flex-col py-40 md:py-52">
       <div className="flex flex-grow items-center justify-center">
         <div className="flex w-full max-w-xs flex-col gap-12 md:max-w-lg">
           <Main />
