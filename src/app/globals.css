@@ -16,7 +16,7 @@
   --background: #ffffff;
   --foreground: #2f2f2f;
   --secondary-foreground: rgb(92, 92, 92);
-  --surface: #EBEBEB;
+  --surface: #ebebeb;
 }
 
 .dark {
@@ -31,7 +31,7 @@
     --background: #111111;
     --foreground: #d0d0d0;
     --secondary-foreground: rgb(163 163 163);
-    --surface: #141414
+    --surface: #141414;
   }
 }
 
@@ -40,3 +40,53 @@ body {
   color: var(--foreground);
   font-family: var(--font-diatype);
 }
+
+.blur-gradient-bottom {
+  backdrop-filter: blur(2px);
+  mask-image: linear-gradient(
+    transparent 0%,
+    rgba(0, 0, 0, 0.4) 70%,
+    #000 100%
+  );
+}
+
+.grid {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.grid .column {
+  width: 8px;
+  flex-shrink: 0;
+}
+
+.column .block {
+  width: 100%;
+  height: 8px;
+  box-sizing: border-box;
+  transition:
+    background-color 1s ease-out,
+    opacity 1s ease-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    background-color: white;
+  }
+  100% {
+    opacity: 0;
+    background-color: transparent;
+  }
+}
+
+.trail-active {
+  animation: fadeOut 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+

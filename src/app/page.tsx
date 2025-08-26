@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { Main } from "@/components/main";
+import { MouseTrail } from "@/components/mouse-trail";
 import { Navbar } from "@/components/navbar";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
           <Main />
           <Navbar />
           <Footer />
+          <MouseTrail />
         </div>
       </div>
     </div>
