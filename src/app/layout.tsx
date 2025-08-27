@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
+import { Databuddy } from "@databuddy/sdk/react";
 
 const diaType = localFont({
   src: [
@@ -61,6 +62,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${diaType.variable} ${ppModwest.variable} antialiased`}>
         {children}
+        <Databuddy clientId="NObFtXZL8_iHWP8vjYLux" enableBatching={true} />
       </body>
     </html>
   );
