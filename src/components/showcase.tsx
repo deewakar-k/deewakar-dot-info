@@ -9,6 +9,10 @@ interface Component {
 
 const components: Component[] = [
   {
+    filename: "chat-input.mp4",
+    date: "Aug 28, 2025",
+  },
+  {
     filename: "ghostie.mov",
     date: "Aug 20, 2025",
   },
@@ -21,27 +25,27 @@ const components: Component[] = [
     date: "July 14, 2025",
   },
   {
-    filename: "in-call.mov",
-    date: "July 15, 2025",
-  },
-  {
     filename: "better-hover.mov",
     date: "July 18, 2025",
   },
 ];
 
+const sorted = [...components].sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime(),
+);
+
 export const Showcase = () => {
   return (
     <div className="flex flex-col gap-4">
-      {components.map(({ filename, date, link }) => {
+      {sorted.map(({ filename, date, link }) => {
         const content = (
           <div className="mb-8">
             <div className="w-full rounded-[8px] border border-zinc-800 p-1 transition hover:shadow-lg dark:border-zinc-800/20">
-              <div className="relative h-[250px] md:h-[300px] md:w-[500px]">
-                {filename.endsWith(".mov") ? (
+              <div className="relative aspect-[16/9]">
+                {filename.endsWith(".mov") || filename.endsWith(".mp4") ? (
                   <video
                     src={`${R2_BASE_URL}/${filename}`}
-                    className="h-full w-full rounded-[4px] object-cover"
+                    className="absolute inset-0 h-full w-full rounded-[4px] object-cover object-center"
                     autoPlay
                     muted
                     loop
@@ -52,7 +56,7 @@ export const Showcase = () => {
                   <img
                     src={`${R2_BASE_URL}/${filename}`}
                     alt={filename.split(".")[0]}
-                    className="h-full w-full rounded-[4px] object-cover"
+                    className="absolute inset-0 h-full w-full rounded-[4px] object-cover object-center"
                   />
                 )}
               </div>
