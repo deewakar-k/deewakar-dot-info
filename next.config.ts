@@ -4,14 +4,14 @@ const nextConfig: NextConfig = {
   /* config options here */
   experimental: {
     turbo: {
-        rules: {
-            '*.{glsl,vs,fs,vert,frag}': {
-                loaders: ['raw-loader'],
-                as: '*.js',
-            },
+      rules: {
+        "*.{glsl,vs,fs,vert,frag}": {
+          loaders: ["raw-loader", "glslify-loader"],
+          as: "*.js",
         },
+      },
     },
-},
+  },
 };
 
 export default nextConfig;

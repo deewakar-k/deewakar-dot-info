@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex max-w-full flex-col py-40 md:py-52">
       <div className="flex flex-grow items-center justify-center">
-        <div className="flex w-full max-w-lg flex-col gap-20 md:max-w-xl">
+        <div className="flex w-full max-w-xs flex-col gap-20 md:max-w-xl">
           <Main />
           <RetroScene />
           <Projects />
