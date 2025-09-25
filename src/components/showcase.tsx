@@ -10,7 +10,7 @@ interface Component {
 const components: Component[] = [
   {
     filename: "logo-carousel.mov",
-    date: "Sep 19, 2025",
+    date: "Sep 25, 2025",
   },
   {
     filename: "chat-input.mp4",
