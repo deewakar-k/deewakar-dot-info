@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { JetBrains_Mono } from "next/font/google";
 import localFont from "next/font/local";
 import { Databuddy } from "@databuddy/sdk/react";
+
+const jetBrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+});
 
 const diaType = localFont({
   src: [
@@ -60,7 +66,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${diaType.variable} ${ppModwest.variable} antialiased`}>
+      <body
+        className={`${diaType.variable} ${ppModwest.variable} ${jetBrainsMono.variable} antialiased`}
+      >
         {children}
         <Databuddy clientId="NObFtXZL8_iHWP8vjYLux" enableBatching={true} />
       </body>

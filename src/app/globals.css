@@ -10,6 +10,7 @@
   --color-surface: var(--surface);
   --font-diatype: var(--font-diatype);
   --font-ppModwest: var(--font-ppModwest);
+  --font-mono: var(--font-mono);
 }
 
 :root {
@@ -92,4 +93,26 @@ body {
 
 .trail-active {
   animation: fadeOut 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) forwards;
+}
+
+.shiki {
+  background: transparent !important;
+  padding: 1rem;
+  font-size: 13px;
+  overflow: auto;
+}
+
+.shiki pre {
+  background: transparent !important;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+}
+
+.shiki code {
+  background: transparent !important;
+  padding: 0;
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-weight: 400;
 }
