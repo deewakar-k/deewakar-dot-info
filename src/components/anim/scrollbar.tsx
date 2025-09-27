@@ -147,10 +147,10 @@ export default function Scrollbar() {
   }, []);
 
   return (
-    <div className="relative w-full max-w-md">
+    <div className="relative w-full max-w-md bg-transparent">
       <div
         ref={containerRef}
-        className="scrollbar-hide cursor-grab overflow-x-auto active:cursor-grabbing"
+        className="scrollbar-hide cursor-grab overflow-x-auto select-none active:cursor-grabbing"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
@@ -211,7 +211,7 @@ export default function Scrollbar() {
           className="pointer-events-none absolute top-0 left-0 h-full w-8"
           style={{
             background:
-              "linear-gradient(to right, #101010 0%, transparent 100%)",
+              "linear-gradient(to right, #0d0d0d 0%, transparent 100%)",
           }}
         />
       )}
@@ -221,7 +221,7 @@ export default function Scrollbar() {
           className="pointer-events-none absolute top-0 right-0 h-full w-8"
           style={{
             background:
-              "linear-gradient(to left, #101010 0%, transparent 100%)",
+              "linear-gradient(to left, #0d0d0d 0%, transparent 100%)",
           }}
         />
       )}

@@ -10,6 +10,7 @@ interface PreviewProps {
   description: string;
   Component: React.ComponentType;
   sourceCode: string;
+  showCode?: boolean;
 }
 
 export function Preview({
@@ -17,6 +18,7 @@ export function Preview({
   description,
   Component,
   sourceCode,
+  showCode = true,
 }: PreviewProps) {
   const [activeTab, setActiveTab] = useState<"preview" | "code">("preview");
   const [highlightedCode, setHighlightedCode] = useState<string>("");
@@ -35,10 +37,10 @@ export function Preview({
       }
     };
 
-    if (sourceCode) {
+    if (sourceCode && showCode) {
       highlightCode();
     }
-  }, [sourceCode]);
+  }, [sourceCode, showCode]);
 
   return (
     <div className="flex max-w-full flex-col py-40 md:py-52">
@@ -66,23 +68,25 @@ export function Preview({
                 >
                   Preview
                 </button>
-                <button
-                  onClick={() => setActiveTab("code")}
-                  className={`font-medium transition-colors ${
-                    activeTab === "code"
-                      ? "text-foreground"
-                      : "text-neutral-400 hover:text-neutral-200"
-                  }`}
-                >
-                  Code
-                </button>
+                {showCode && (
+                  <button
+                    onClick={() => setActiveTab("code")}
+                    className={`font-medium transition-colors ${
+                      activeTab === "code"
+                        ? "text-foreground"
+                        : "text-neutral-400 hover:text-neutral-200"
+                    }`}
+                  >
+                    Code
+                  </button>
+                )}
               </div>
 
-              <CopyButton text={sourceCode} />
+              {showCode && <CopyButton text={sourceCode} />}
             </div>
 
             <div className="flex h-[300px] overflow-auto rounded-[8px] border border-neutral-900 bg-[#0d0d0d]">
-              {activeTab === "preview" ? (
+              {activeTab === "preview" || !showCode ? (
                 <div className="flex w-full items-center justify-center p-8">
                   <Component />
                 </div>

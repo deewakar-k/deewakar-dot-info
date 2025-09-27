@@ -21,6 +21,7 @@ export default async function Page({ params }: PageProps) {
     description,
     component: Component,
     sourceCode,
+    showCode,
   } = componentData;
 
   if (!Component) {
@@ -33,6 +34,7 @@ export default async function Page({ params }: PageProps) {
       description={description}
       Component={Component}
       sourceCode={sourceCode}
+      showCode={showCode}
     />
   );
 }

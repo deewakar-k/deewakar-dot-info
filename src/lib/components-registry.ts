@@ -1,6 +1,7 @@
 import { ComponentType } from "react";
 import { readSourceFile } from "./source-reader";
 import { LogoCarousel } from "../components/anim/logo-carousel";
+import Scrollbar from "@/components/anim/scrollbar";
 
 export interface ComponentMetadata {
   id: string;
@@ -11,6 +12,7 @@ export interface ComponentMetadata {
   component: ComponentType | null; 
   sourcePath: string;
   view: boolean;
+  showCode?: boolean;
   link?: string;
 }
 
@@ -25,9 +27,10 @@ export const COMPONENTS_REGISTRY: Record<string, ComponentMetadata> = {
     description: "An animated scrollbar component built with motion and sfx.",
     filename: "scrollbar.mp4",
     date: "Sep 27, 2025",
-    component: null,
-    sourcePath: "",
-    view: false,
+    component: Scrollbar,
+    sourcePath: "components/anim/scrollbar.tsx",
+    view: true,
+    showCode: false,
   },
   "logo-carousel": {
     id: "logo-carousel",
@@ -98,7 +101,7 @@ export const getComponentById = (id: string): ComponentDisplay | null => {
     return null;
   }
 
-  const sourceCode = component.sourcePath ? readSourceFile(component.sourcePath) : '// No source code available';
+  const sourceCode = (component.showCode !== false && component.sourcePath) ? readSourceFile(component.sourcePath) : '// No source code available';
 
   return {
     ...component,
