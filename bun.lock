@@ -16,6 +16,7 @@
         "react-dom": "19.1.1",
         "shiki": "^3.13.0",
         "tailwind-merge": "^3.3.1",
+        "use-sound": "^5.0.0",
       },
       "devDependencies": {
         "@eslint/eslintrc": "^3",
@@ -526,6 +527,8 @@
 
     "hast-util-whitespace": ["hast-util-whitespace@3.0.0", "", { "dependencies": { "@types/hast": "^3.0.0" } }, "sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw=="],
 
+    "howler": ["howler@2.2.4", "", {}, "sha512-iARIBPgcQrwtEr+tALF+rapJ8qSc+Set2GJQl7xT1MQzWaVkFebdJhR3alVlSiUf5U7nAANKuj3aWpwerocD5w=="],
+
     "html-void-elements": ["html-void-elements@3.0.0", "", {}, "sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg=="],
 
     "ignore": ["ignore@5.3.2", "", {}, "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="],
@@ -903,6 +906,8 @@
     "unrs-resolver": ["unrs-resolver@1.10.1", "", { "dependencies": { "napi-postinstall": "^0.3.0" }, "optionalDependencies": { "@unrs/resolver-binding-android-arm-eabi": "1.10.1", "@unrs/resolver-binding-android-arm64": "1.10.1", "@unrs/resolver-binding-darwin-arm64": "1.10.1", "@unrs/resolver-binding-darwin-x64": "1.10.1", "@unrs/resolver-binding-freebsd-x64": "1.10.1", "@unrs/resolver-binding-linux-arm-gnueabihf": "1.10.1", "@unrs/resolver-binding-linux-arm-musleabihf": "1.10.1", "@unrs/resolver-binding-linux-arm64-gnu": "1.10.1", "@unrs/resolver-binding-linux-arm64-musl": "1.10.1", "@unrs/resolver-binding-linux-ppc64-gnu": "1.10.1", "@unrs/resolver-binding-linux-riscv64-gnu": "1.10.1", "@unrs/resolver-binding-linux-riscv64-musl": "1.10.1", "@unrs/resolver-binding-linux-s390x-gnu": "1.10.1", "@unrs/resolver-binding-linux-x64-gnu": "1.10.1", "@unrs/resolver-binding-linux-x64-musl": "1.10.1", "@unrs/resolver-binding-wasm32-wasi": "1.10.1", "@unrs/resolver-binding-win32-arm64-msvc": "1.10.1", "@unrs/resolver-binding-win32-ia32-msvc": "1.10.1", "@unrs/resolver-binding-win32-x64-msvc": "1.10.1" } }, "sha512-EFrL7Hw4kmhZdwWO3dwwFJo6hO3FXuQ6Bg8BK/faHZ9m1YxqBS31BNSTxklIQkxK/4LlV8zTYnPsIRLBzTzjCA=="],
 
     "uri-js": ["uri-js@4.4.1", "", { "dependencies": { "punycode": "^2.1.0" } }, "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="],
+
+    "use-sound": ["use-sound@5.0.0", "", { "dependencies": { "howler": "^2.2.4" }, "peerDependencies": { "react": ">=16.8" } }, "sha512-MNHT3FFC5HxNCrgZtrnpIMJI2cw/0D2xismcrtyht8BTuF5FhFhb57xO/jlQr2xJaFrc/0btzRQvGyHQwB7PVA=="],
 
     "vfile": ["vfile@6.0.3", "", { "dependencies": { "@types/unist": "^3.0.0", "vfile-message": "^4.0.0" } }, "sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q=="],
 

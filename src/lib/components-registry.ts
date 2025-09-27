@@ -19,6 +19,16 @@ export interface ComponentDisplay extends ComponentMetadata {
 }
 
 export const COMPONENTS_REGISTRY: Record<string, ComponentMetadata> = {
+  "scrollbar": {
+    id: "scrollbar",
+    title: "Scrollbar",
+    description: "An animated scrollbar component built with motion and sfx.",
+    filename: "scrollbar.mp4",
+    date: "Sep 27, 2025",
+    component: null,
+    sourcePath: "",
+    view: false,
+  },
   "logo-carousel": {
     id: "logo-carousel",
     title: "Logo Carousel",
